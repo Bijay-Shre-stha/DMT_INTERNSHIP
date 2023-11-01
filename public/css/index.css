@@ -20,12 +20,10 @@ h1 {
     border: 1px solid #ccc;
     border-radius: 5px;
     margin-top: 20px;
-    overflow: hidden;
 }
 
 table {
     width: 100%;
-    border-collapse: collapse;
 }
 
 th,

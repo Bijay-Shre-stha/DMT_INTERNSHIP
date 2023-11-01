@@ -26,7 +26,7 @@
             <input type="text" name="tag" id="tag" placeholder="Tag" required>
             <input type="submit" value="Save Note">
         </form>
-
+<br>
         <h1>Note List</h1>
         @if (session()->has('success'))
             <div class="alert">
