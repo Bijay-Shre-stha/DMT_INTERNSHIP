@@ -1,18 +1,15 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CurdController;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/',[CurdController::class,'index'])->name('index');
+Route::get('/create',[CurdController::class,'create'])->name('create');
+Route::post('/',[CurdController::class,'store'])->name('store');
+Route::get('/edit/{id}',[CurdController::class,'edit'])->name('edit');
+Route::put('/update/{id}',[CurdController::class,'update'])->name('update');
+Route::get('/delete/{id}',[CurdController::class,'delete'])->name('delete');
+Route::get('/sortDesc', [CurdController::class,'sortByDateDesc']);
+Route::get('/sortAsc', [CurdController::class,'sortByDateAsc']);
+
