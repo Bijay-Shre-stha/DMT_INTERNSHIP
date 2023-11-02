@@ -42,6 +42,7 @@
                         <th>Description</th>
                         <th>Tag</th>
                         <th>Action</th>
+                        <th>Updated Time</th>
                         <th>Created Time</th>
                     </tr>
                 </thead>
@@ -61,7 +62,8 @@
                                     <button type="submit" class="text-danger">Delete</button>
                                 </form> --}}
                             </td>
-                            <td>{{ $note->created_at->diffForHumans() }}</td>
+                            <td>{{ $note->updated_at->diffForHumans() }}</td>
+                            <td>{{ $note->created_at }}</td>
                         </tr>
                     @endforeach
                 </tbody>
