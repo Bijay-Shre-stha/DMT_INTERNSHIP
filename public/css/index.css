@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Merriweather:ital,wght@1,700&family=Playpen+Sans:wght@300&family=Poppins:wght@200;300;500&display=swap');
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Playpen Sans', cursive;
     background-color: #f0f0f0;
     margin: 0;
     padding: 0;

@@ -26,16 +26,11 @@
             <input type="text" name="tag" id="tag" placeholder="Tag" required>
             <input type="submit" value="Save Note">
         </form>
-<br>
+        <br>
         <h1>Note List</h1>
         @if (session()->has('success'))
             <div class="alert">
                 {{ session()->get('success') }}
-            </div>
-        @endif
-        @if (session()->has('error'))
-            <div class="alert">
-                {{ session()->get('error') }}
             </div>
         @endif
         <div class="table">
@@ -60,8 +55,13 @@
                             <td class="action">
                                 <a class="text-success" href="{{ route('edit', $note->id) }}">Edit</a>
                                 <a class="text-danger" href="{{ route('delete', $note->id) }}">Delete</a>
+                                {{-- <form method="DELETE" action="{{ route('delete', $note->id) }}">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="text-danger">Delete</button>
+                                </form> --}}
                             </td>
-                            <td>{{ $note->created_at }}</td>
+                            <td>{{ $note->created_at->diffForHumans() }}</td>
                         </tr>
                     @endforeach
                 </tbody>
