@@ -51,14 +51,19 @@ class CurdController extends Controller
         $note->delete();
         return redirect(route('index'))->with('success', 'Note Deleted successfully');
     }
+    public function sortByDate($direction)
+    {
+        $notes = dmt_curd::orderBy('created_at', $direction)->get();
+        return view('index', compact('notes'));
+    }
+
     public function sortByDateAsc()
     {
-        $notes = dmt_curd::orderBy('created_at', 'asc')->get();
-        return view('index', ['notes' => $notes]);
+        return $this->sortByDate('asc');
     }
+
     public function sortByDateDesc()
     {
-        $notes = dmt_curd::orderBy('created_at', 'desc')->get();
-        return view('index', ['notes' => $notes]);
+        return $this->sortByDate('desc');
     }
 }
